@@ -1,0 +1,17 @@
+// # Criar um qubit e medir ele no estado |0>​
+///​
+
+namespace QuantumHelloWorld {​
+
+   open Microsoft.Quantum.Measurement;​
+
+   @EntryPoint()​
+   operation RandomBit() : Result {​
+
+      Message("Primeiro Exemplo");​
+​
+      use q = Qubit();​
+
+      return MResetZ(q);​
+   }​
+}​
