@@ -1,14 +1,45 @@
-/// # Criar um qubit e medir ele no estado |0>
-///
-namespace ExemploQuantumQShapr {
+/// # Quantum Hello World!​
 
-    open Microsoft.Quantum.Measurement;
+///​
 
-    @EntryPoint()
-    operation Exemplo01() : Result {
-        Message("Exemplo 01");
-        use q = Qubit();
+/// This Q# code generates a random bit by setting a qubit in a superposition of​
 
-        return MResetZ(q);
-    }
-}
+/// the computational basis states |0〉 and |1〉, and returning the measurement result.​
+
+namespace QuantumHelloWorld {​
+
+​
+
+@EntryPoint()​
+
+operation RandomBit() : Result {​
+
+Message("Hello world!");​
+
+use qubit = Qubit();​
+
+​
+
+// Set the qubit in superposition by applying a Hadamard transformation.​
+
+H(qubit);​
+
+​
+
+// Measure the qubit. There is a 50% probability of measuring either 'Zero' or 'One'.​
+
+let result = M(qubit);​
+
+​
+
+// Reset the qubit so it can be safely released.​
+
+Reset(qubit);​
+
+return result;​
+
+}​
+
+}​
+
+​
